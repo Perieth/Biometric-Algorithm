@@ -1,7 +1,7 @@
 import numpy as np
 import tkinter
 import tkinter.messagebox
-np.set_printoptions(suppress=True, precision = 5) 
+np.set_printoptions(suppress=True, precision = 7) 
 score = 0
 
 neuronNumber = 7 #Best set to 7
@@ -148,7 +148,7 @@ if __name__ == "__main__":
     weight1results = []
     weight2results = []
     
-    for i in range(10):        
+    for i in range(1):        
         nn = neuralNetwork(X,y)
         print("loading: " + str(i*10))
         nn.feedforward()
@@ -213,7 +213,10 @@ if __name__ == "__main__":
         InputArray = InputArray/np.amax(InputArray, axis=0)
         layer1test = sigmoid(np.dot(InputArray, weight1results[bestIndex]))
         userOutput = sigmoid(np.dot(layer1test , weight2results[bestIndex]))
+        print("  Neutral   Joyful      Sad    Surprised   Angry")
+    
         print(str(userOutput[(len(userOutput)-1)]))
+
 
 
 
