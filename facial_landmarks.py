@@ -129,26 +129,27 @@ class ProgramGUI:
             upperEyelidToLowerEyelid = (p41[1] - p39[1])
             eyebrowDistance = (p23[0] - p22[0])
 
-            facialExpression = int(image_variable[17]) #assuming picture is located in I:/FacesDB/ and using FacesDB naming system
+            facialExpression = [image_variable[17]] #assuming picture is located in I:/FacesDB/ and using FacesDB naming system
                                                  #FaceDB naming system e.g. s001-0Y
                                                  #Values for Y 0 = neutral, 1 = happy, 2 = sad, 3 = surprised, 4 = angry
 
+            
+
             usefulData = [ mouthOpening, mouthWidth, topLipThickness, bottomLipThickness,
                            eyebrowRaiseDistance, upperEyelidToEyebrow, upperEyelidToLowerEyelid,
-                           eyebrowDistance, facialExpression]
+                           eyebrowDistance]
 
-            print(usefulData)
             
-            usefulFile = open("bigFaceFile.txt", 'a')
-        
-            
-            usefulFile.write(str(usefulData))
-            usefulFile.write("\n")
+            usefulFile = open("bigFaceFile.txt", 'a')                       
+            usefulFile.write(str(usefulData))           
+            usefulFile.write(",\n")
             usefulFile.close()
 
-
-            
-
+            print(facialExpression)
+            otherUsefulFile = open("awnserSheet.txt", 'a') 
+            otherUsefulFile.write(str(facialExpression))
+            otherUsefulFile.write(",\n")            
+            otherUsefulFile.close
 
 
 
